@@ -10,11 +10,9 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, star, triangle } from 'ionicons/icons';
-import Home from './pages/Home';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
-import Culture from './pages/Culture'
+import Tabs from './pages/Tabs';
+import CountryDetail from './pages/CountryDetail';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -51,43 +49,21 @@ setupIonicReact();
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route exact path="/culture">
-            <Culture />
-          </Route>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
-          </Route>
-          <Route path="/tab3">
-            <Tab3 />
-          </Route>
-          <Route exact path="/">
-            <Redirect to="/tab1" />
-          </Route>
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="culture" href="/culture">
-            <IonIcon aria-hidden="true" icon={star} />
-            <IonLabel>Culture</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="home" href="/home">
-            <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Home</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon aria-hidden="true" icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon aria-hidden="true" icon={square} />
-            <IonLabel>Tab 3</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
+      <IonRouterOutlet>
+
+        <Route exact path="/">
+          <Redirect to="/tabs/home" />
+        </Route>
+
+        <Route path="/tabs">
+          <Tabs />
+        </Route>
+
+        <Route exact path="/country/:id">
+          <CountryDetail />
+        </Route>
+
+      </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
 );

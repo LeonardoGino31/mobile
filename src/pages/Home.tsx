@@ -1,9 +1,9 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonText, IonSearchbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 import CountryCard from '../components/CountryCard';
 import { CountryI, countries as mockCountries } from '../data/countries';
 import { useState, useEffect } from 'react';
+import CountryCardSkeleton from '../components/CountryCardSkeleton';
 
 const Home: React.FC = () => {
   const [countries, setCountries] = useState<CountryI[]>([]);
@@ -39,34 +39,34 @@ const Home: React.FC = () => {
               importantes antes de visitar otro país.
             </p>
           </IonText>
+
         </div>
-        <IonSearchbar
-          className="searchbar-modern"
-          placeholder="Buscar país"
-          value={search}
-          onIonInput={(e) => setSearch(e.detail.value!)}
-        />
+        <div style={{ padding: '16px' }}>
+          <IonText>
+            <h2>Encuentra tu destino</h2>
+          </IonText>
+          <IonSearchbar
+            className="searchbar-modern"
+            placeholder="Buscar país"
+            value={search}
+            onIonInput={(e) => setSearch(e.detail.value!)}
+          />
+        </div>
         <div style={{ padding: '16px' }}>
           {loading && <p>Cargando paises disponibles...</p>}
           <div className="cards-container">
-            {!loading && filteredCountries.length === 0 && (
-              <IonText color="medium" style={{ padding: '16px' }}>
-                <p>País no disponible por el momento</p>
-              </IonText>
-            )}
-
-            {!loading &&
-              filteredCountries.map(country => (
+            {loading
+              ? Array.from({ length: 3 }).map((_, i) => (
+                <CountryCardSkeleton key={i} />
+              ))
+              : countries.map(country => (
                 <CountryCard
                   key={country.id}
-                  name={country.name}
-                  description={country.description}
-                  extraInfo={country.extraInfo}
-                  image={country.image}
+                  {...country}
                 />
               ))}
-
           </div>
+
         </div>
       </IonContent>
     </IonPage>

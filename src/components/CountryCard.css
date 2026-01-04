@@ -33,7 +33,7 @@
   border-top-right-radius: 20px;
 }
 
-.country-card.turquia {
+.country-card.turquía {
   background: #fde2e4;
 }
 
@@ -41,8 +41,13 @@
   background: #fff1c1;
 }
 
+.country-card.francia {
+  background: #e7ffb0;
+}
+
 .country-card-header {
-  padding-bottom: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 4px 10px;
 }
 
 .title-row {
