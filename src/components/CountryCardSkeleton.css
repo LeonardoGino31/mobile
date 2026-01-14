@@ -1,0 +1,11 @@
+.skeleton-card {
+  min-width: 260px;
+  max-width: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.skeleton-hero {
+  height: 150px;
+}

@@ -1,2 +1,12 @@
 /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */
+
+:root {
+  --ion-font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont;
+}
+@media (prefers-color-scheme: dark) {
+  ion-card {
+    --background: #1e1e1e;
+    color: #fff;
+  }
+}
