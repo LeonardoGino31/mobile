@@ -3,6 +3,17 @@ http://ionicframework.com/docs/theming/ */
 
 :root {
   --ion-font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont;
+
+  /* Light mode colors */
+  --ion-color-primary: #3366ff;
+  --ion-color-primary-rgb: 51, 102, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #2952cc;
+  --ion-color-primary-tint: #527aff;
+
+  --ion-background-color: #ffffff;
+  --ion-text-color: #1a1a2e;
 }
 @media (prefers-color-scheme: dark) {
   ion-card {
