@@ -1,4 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
+import { SettingsProvider } from './context/SettingsContext';
 import {
   IonApp,
   IonRouterOutlet,
@@ -35,7 +36,8 @@ import '@ionic/react/css/display.css';
 
 /* import '@ionic/react/css/palettes/dark.always.css'; */
 /* import '@ionic/react/css/palettes/dark.class.css'; */
-import '@ionic/react/css/palettes/dark.system.css';
+import '@ionic/react/css/palettes/dark.class.css';
+
 
 /* Theme variables */
 import './theme/variables.css';
@@ -44,6 +46,7 @@ setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+    <SettingsProvider>
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/">
@@ -63,6 +66,7 @@ const App: React.FC = () => (
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
+    </SettingsProvider>
   </IonApp>
 );
 
