@@ -59,7 +59,7 @@ const Home: React.FC = () => {
               ? Array.from({ length: 3 }).map((_, i) => (
                 <CountryCardSkeleton key={i} />
               ))
-              : countries.map(country => (
+              : filteredCountries.map(country => (
                 <CountryCard
                   key={country.id}
                   {...country}
