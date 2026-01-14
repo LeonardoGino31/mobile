@@ -10,3 +10,36 @@ http://ionicframework.com/docs/theming/ */
     color: #fff;
   }
 }
+
+.dark {
+
+  --ion-background-color: #11112ed7;
+
+  --ion-text-color: #e6e6e6;
+
+  --ion-card-background: #2e2e46;
+  --ion-item-background: #1e1e35;
+
+
+  --ion-color-primary: #7aa2ff;
+  --ion-color-secondary: #4ade80;
+
+  --ion-border-color: #3a3a3c;
+}
+
+.language-alert .alert-wrapper {
+  --background: #1e1e2f;
+  background: #1e1e2f;
+}
+
+.language-alert .alert-title {
+  color: #ffffff;
+}
+
+.language-alert .alert-radio-label {
+  color: #e5e7eb;
+}
+
+.language-alert .alert-button {
+  color: #4f8cff;
+}
